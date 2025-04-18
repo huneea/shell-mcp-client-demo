@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: shell-mcp-client-demo
+  main:
+    web-application-type: none
+
+  shell:
+    interactive:
+      enabled: true
+
+  ai:
+    anthropic:
+      # TODO - API key for Anthropic
+      api-key: { ANTHROPIC_API_KEY }
+      chat:
+        options:
+          model: claude-3-7-sonnet-latest
+    #    openai:
+    #        api-key: { CHATGPT_API_KEY }
+    #        chat:
+    #            options:
+    #            model: gpt-4-mini
+    mcp:
+      client:
+        toolcallback:
+          enabled: true
+        stdio:
+          #servers-configuration: classpath:mcp-servers-config.json
+          connections:
+            filesystem:
+              command: npx
+              args:
+                - "-y"
+                - "@modelcontextprotocol/server-filesystem"
+                - "/Users/nhn/Desktop/demo"
+            korea-address-finder:
+              command: java
+              args:
+                - "-jar"
+                - "/Users/nhn/work/workspace-intellij-ai/kor-address-mcp-demo/build/libs/kor-address-mcp-demo-0.0.1-SNAPSHOT.jar"
+              env:
+                API_KEY: U01TX0FVVEgyMDI1MDQxODEzNDM1MjExNTY3MTE=

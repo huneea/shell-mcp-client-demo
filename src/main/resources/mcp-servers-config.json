@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/nhn/Desktop/demo"
+      ]
+    },
+    "korea-address-finder": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/Users/nhn/work/workspace-intellij-ai/kor-address-mcp-demo/build/libs/kor-address-mcp-demo-0.0.1-SNAPSHOT.jar"
+      ],
+      "env": {
+        "API_KEY": "U01TX0FVVEgyMDI1MDQxODEzNDM1MjExNTY3MTE="
+      }
+    }
+  }
+}
