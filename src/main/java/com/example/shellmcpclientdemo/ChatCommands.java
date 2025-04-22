@@ -17,6 +17,11 @@ public class ChatCommands {
         this.chatClient = builder
             .defaultTools(tools)
             .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
+            .defaultSystem("""
+                               너는 스마트 에이전트야.
+                               국내 주소를 찾을때는 `korea-address-finder` 툴을 사용해.
+                               그리고 답변은 한국어로 해줘.
+                               """)
             .build();
     }
 

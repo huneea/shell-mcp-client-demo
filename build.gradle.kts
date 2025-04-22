@@ -28,8 +28,9 @@ extra["springShellVersion"] = "3.4.0"
 
 dependencies {
     implementation("org.springframework.ai:spring-ai-starter-mcp-client")
-    implementation("org.springframework.ai:spring-ai-starter-model-anthropic")
+    //implementation("org.springframework.ai:spring-ai-starter-model-anthropic")
     //implementation("org.springframework.ai:spring-ai-starter-model-openai")
+    implementation("org.springframework.ai:spring-ai-starter-model-ollama")
     implementation("org.springframework.shell:spring-shell-starter")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")

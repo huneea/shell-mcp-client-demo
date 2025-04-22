@@ -9,17 +9,23 @@ spring:
       enabled: true
 
   ai:
-    anthropic:
-      # TODO - API key for Anthropic
-      api-key: { ANTHROPIC_API_KEY }
+    ollama:
+      base-url: http://localhost:11434
       chat:
         options:
-          model: claude-3-7-sonnet-latest
-    #    openai:
-    #        api-key: { CHATGPT_API_KEY }
-    #        chat:
-    #            options:
-    #            model: gpt-4-mini
+          model: qwen2.5:32b
+
+    #anthropic:
+    #  api-key: { CLAUDE_API_KEY }
+    #  chat:
+    #    options:
+    #      model: claude-3-7-sonnet-latest
+
+    #openai:
+    #  api-key: { CHATGPT_API_KEY }
+    #  chat:
+    #    options:
+    #      model: gpt-4-mini
     mcp:
       client:
         toolcallback:
@@ -27,12 +33,12 @@ spring:
         stdio:
           #servers-configuration: classpath:mcp-servers-config.json
           connections:
-            filesystem:
-              command: npx
-              args:
-                - "-y"
-                - "@modelcontextprotocol/server-filesystem"
-                - "/Users/nhn/Desktop/demo"
+            #filesystem:
+            #  command: npx
+            #  args:
+            #    - "-y"
+            #    - "@modelcontextprotocol/server-filesystem"
+            #    - "/Users/nhn/Desktop/demo"
             korea-address-finder:
               command: java
               args:
